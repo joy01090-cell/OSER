@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>ER Note</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="section">
+      <h2>기본 정보</h2>
+      <label>등록번호 / 성별나이 / 성명</label>
+      <div class="row cols-2">
+        <input id="regNum" inputmode="numeric" autocomplete="off" placeholder="12345678">
+        <input id="sexAgeName" autocomplete="off" placeholder="M/67 홍길동">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>과거력</h2>
+      <div id="pastHistoryList" class="row">
+        <textarea placeholder="예) DM, HTN"></textarea>
+      </div>
+      <div class="mt-8">
+        <button type="button" class="btn" id="addPastBtn">+ 과거력 추가</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>복용약 / Charnley</h2>
+      <div class="row cols-2">
+        <input id="meds" placeholder="예) ASA, Plavix">
+        <input id="charnley" placeholder="예) 6점으로 일상생활 양호">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>손상 정보</h2>
+      <div class="row cols-2">
+        <input id="traumaTime" placeholder="예) 금일 오전 9시경">
+        <input id="traumaMechanism" placeholder="예) Slip down">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>주소/골절</h2>
+      <div class="row">
+        <input id="chiefComplaint" placeholder="예) Lt. hip pain">
+        <div class="row cols-3">
+          <input id="fractureSide" placeholder="예) Lt.">
+          <input id="fractureSite" placeholder="예) proximal femur">
+          <input id="aoType" placeholder="예) AO 31-A2">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>상태 토글</h2>
+      <div class="row cols-3">
+        <button class="btn ghost" id="pain">Pain: -</button>
+        <button class="btn ghost" id="td">Td: -</button>
+        <button class="btn ghost" id="swelling">Swelling: -</button>
+        <button class="btn ghost" id="bruise">Bruise: -</button>
+        <button class="btn ghost" id="extWound">Ext wound: -</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>기타</h2>
+      <div class="row cols-3">
+        <input id="distalCms" placeholder="Distal CMS 예) Intact">
+        <input id="labAbnormal" placeholder="Lab 예) Hb 8.5">
+        <input id="patientStatus" placeholder="Status 예) V/S stable">
+      </div>
+      <label class="mt-8">교수님 보고/플랜</label>
+      <textarea id="profReport" placeholder="예) 타과 컨설트, 입원, preOP plan"></textarea>
+    </div>
+
+    <div class="section">
+      <h2>출력</h2>
+      <pre id="reportArea"></pre>
+    </div>
+
+  </div>
+
+  <!-- 하단 고정 툴바 -->
+  <div class="toolbar">
+    <div class="wrap">
+      <button class="btn" id="btnCopy">복사</button>
+      <button class="btn warn" id="btnClear">초기화</button>
+      <button class="btn ok" onclick="makeReport()">보고서 생성</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

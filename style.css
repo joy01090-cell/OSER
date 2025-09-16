@@ -1,0 +1,77 @@
+:root{
+  --bg:#0b1023; --panel:#111827; --text:#e5e7eb; --muted:#94a3b8;
+  --line:rgba(148,163,184,.25); --accent:#0ea5e9; --ok:#22c55e; --warn:#f59e0b;
+}
+
+html, body { height:100%; }
+body{
+  margin:0;
+  background:#0a0f1e;
+  color:var(--text);
+  font-family:-apple-system, system-ui, "Noto Sans KR", sans-serif;
+  font-size:16px;  /* iOS 포커스 자동줌 방지 */
+  -webkit-text-size-adjust:100%;
+}
+
+.container{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 14px 96px; /* 하단 툴바 공간 */
+}
+
+.section{
+  background:rgba(17,24,39,.9);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:12px;
+}
+.section h2{ font-size:15px; margin:0 0 8px; color:#cbd5e1; }
+label{ display:block; color:var(--muted); font-size:12px; margin:6px 0 6px; }
+.mt-8{ margin-top:8px; }
+
+input, textarea{
+  width:100%;
+  font-size:16px;
+  line-height:1.35;
+  padding:12px 12px;
+  border-radius:12px;
+  color:var(--text);
+  background:#0b1222;
+  border:1px solid var(--line);
+  outline:none;
+}
+textarea{ min-height:92px; resize:vertical; }
+
+.row{ display:grid; gap:8px; }
+.row.cols-2{ grid-template-columns:1fr 1fr; }
+.row.cols-3{ grid-template-columns:1fr 1fr 1fr; }
+@media (max-width: 640px){
+  .row.cols-2, .row.cols-3{ grid-template-columns:1fr; }
+}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:48px; padding:0 14px; gap:8px;
+  font-size:16px; border-radius:12px; cursor:pointer;
+  background:#0b1222; color:var(--text); border:1px solid var(--line);
+}
+.btn.ok{ background:linear-gradient(180deg,#22c55e,#16a34a); border-color:#22c55e; }
+.btn.warn{ background:linear-gradient(180deg,#f59e0b,#d97706); border-color:#f59e0b; }
+.btn.ghost{ background:transparent; }
+
+.toolbar{
+  position:fixed; left:0; right:0; bottom:0;
+  padding:10px env(safe-area-inset-right) calc(10px + env(safe-area-inset-bottom)) env(safe-area-inset-left);
+  background:rgba(10,15,30,.8); backdrop-filter: blur(10px);
+  border-top:1px solid var(--line);
+}
+.toolbar .wrap{
+  max-width:720px; margin:0 auto; display:flex; gap:8px;
+}
+.toolbar .wrap .btn{ flex:1; }
+
+pre#reportArea{
+  background:#0b1222; border:1px dashed var(--line);
+  border-radius:12px; padding:12px; white-space:pre-wrap;
+}
