@@ -1,0 +1,67 @@
+<div>
+  <label>등록번호 / 성별나이 / 성명:</label><br>
+  <input id="regNum" placeholder="12345678" />
+  <input id="sexAgeName" placeholder="M/67 홍길동" />
+</div>
+
+<div>
+  <label>과거력:</label>
+  <div id="pastHistoryList">
+    <textarea placeholder="예) DM, HTN"></textarea>
+  </div>
+  <button id="addPastBtn">과거력 추가</button>
+</div>
+
+<div>
+  <label>복용약:</label><br>
+  <input id="meds" placeholder="예) ASA, Plavix" />
+</div>
+  <label> Charnley 점수:</label><br>
+  <input id="charnley" placeholder="예) 6점으로 일상생활 잘하는 분입니다" />
+</div>
+
+<div>
+  <label>손상 시각 / 손상 기전:</label><br>
+  <input id="traumaTime" placeholder="예) 금일 오전 9시경" />
+  <input id="traumaMechanism" placeholder="예) 슬립 다운" />
+</div>
+
+<div>
+  <label>내원 주소:</label><br>
+  <input id="chiefComplaint" placeholder="예) Lt. hip pain" />
+</div>
+
+<div>
+  <label>골절 부위:</label><br>
+  <input id="fractureSide" placeholder="예) Lt." />
+  <input id="fractureSite" placeholder="예) proximal femur" />
+  <input id="aoType" placeholder="예) AO 31-A2" />
+</div>
+
+<div>
+  <label>상태: (+/- 클릭)</label><br>
+  Pain <button id="pain">-</button>
+  Td <button id="td">-</button>
+  Swelling <button id="swelling">-</button>
+  Bruise <button id="bruise">-</button>
+  Ext wound <button id="extWound">-</button>
+</div>
+<div>
+  <label>Distal CMS / Lab 이상 / 전신 상태:</label><br>
+  <input id="distalCms" placeholder="예) Intact" />
+  <input id="labAbnormal" placeholder="예) Hb 8.5" />
+  <input id="patientStatus" placeholder="예) V/S stable" />
+</div>
+
+<div>
+  <label>기타:</label><br>
+  <textarea id="profReport" placeholder="예) 타과, 교수님 상의내용, 입원, preOP plan."></textarea>
+</div>
+
+<br>
+<button onclick="makeReport()">📄 보고서 생성</button>
+
+<pre id="reportArea" style="white-space: pre-wrap; background: #f8f8f8; padding: 1em; border: 1px solid #ccc; margin-top: 1em;"></pre>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
